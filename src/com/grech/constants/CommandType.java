@@ -1,4 +1,6 @@
-package com.grech.constances;
+package com.grech.constants;
+
+import java.util.List;
 
 public enum CommandType {
     ENCRYPT("ENCRYPT"),
@@ -6,6 +8,15 @@ public enum CommandType {
     BRUTE_FORCE("BRUTE_FORCE");
 
     private final String displayName;
+    private static final List<String> commands;
+
+    static {
+        commands = List.of(
+                ENCRYPT.toString(),
+                DECRYPT.toString(),
+                BRUTE_FORCE.toString()
+        );
+    }
 
     CommandType(String displayName) {
         this.displayName = displayName;
@@ -18,5 +29,9 @@ public enum CommandType {
     @Override
     public String toString() {
         return displayName;
+    }
+
+    public static List<String> getCommands() {
+        return commands;
     }
 }
