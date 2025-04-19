@@ -1,3 +1,5 @@
+package com.grech.services;
+
 public class CaesarCipherService {
     public static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,«»\"':!? ";
 

@@ -1,3 +1,5 @@
+package com.grech.constances;
+
 public enum CommandType {
     ENCRYPT("ENCRYPT"),
     DECRYPT("DECRYPT"),
