@@ -2,7 +2,7 @@ package com.grech.services;
 
 import com.grech.exceptions.InvalidBruteForceException;
 
-import static com.grech.constants.Constants.ALPHABET;
+import static com.grech.constants.Constants.EN_ALPHABET;
 import static com.grech.constants.Constants.VALID_TEXT_PATTERN;
 
 public class CaesarCipherService {
@@ -22,10 +22,10 @@ public class CaesarCipherService {
         char[] textArray = text.toCharArray();
 
         for (int i = 0; i < textArray.length; ++i) {
-            int index = ALPHABET.indexOf(textArray[i]);
+            int index = EN_ALPHABET.indexOf(textArray[i]);
             if (index >= 0) {
-                int shiftedIndex = (index + key) % ALPHABET.length();
-                textArray[i] = ALPHABET.charAt(shiftedIndex);
+                int shiftedIndex = (index + key) % EN_ALPHABET.length();
+                textArray[i] = EN_ALPHABET.charAt(shiftedIndex);
             }
         }
 
@@ -33,12 +33,12 @@ public class CaesarCipherService {
     }
 
     private int normalizeKey(int key) {
-        int alphabetLength = ALPHABET.length();
+        int alphabetLength = EN_ALPHABET.length();
         return (key % alphabetLength + alphabetLength) % alphabetLength;
     }
 
     private String bruteForceDecrypt(String inputText) {
-        for (int i = 1; i < ALPHABET.length(); i++) {
+        for (int i = 1; i < EN_ALPHABET.length(); i++) {
             String decryptedText = decrypt(inputText, i);
             if (isValidText(decryptedText)) {
                 return decryptedText;
