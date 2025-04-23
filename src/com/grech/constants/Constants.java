@@ -11,5 +11,7 @@ public final class Constants {
     public static final int MAX_ALLOWED_ARGS_COUNT = 3;
     public static final int DEFAULT_KEY = 0;
     public static final String EN_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,«»\"':!? ";
-    public static final Pattern VALID_TEXT_PATTERN = Pattern.compile(".*( the | and | is | of | to | in | that | it | for | on ).*");
+    public static final String UA_ALPHABET = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя.,«»\"':!? ";
+    public static final Pattern VALID_TEXT_PATTERN = Pattern.compile(".*( the | and | is | of | to | in | that | it | for | on | що | це | як | на | не | до | та ).*");
+    public static final Pattern UKRAINIAN_LETTERS_PATTERN = Pattern.compile("[ҐґЄєІіЇї]");
 }
